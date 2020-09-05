@@ -1,0 +1,50 @@
+<!--
+ * @Author: DaBaiLuoBo
+ * @Date: 2020-09-02 22:27:45
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>断言函数实现</title>
+    <script type="">
+        // 创建一个assert方法
+        function assert (value, desc) {
+            var li = document.createElement("li");
+            li.className = value ? "pass" : "fail";
+            li.appendChild(document.createTextNode(desc));
+            document.getElementById("results").appendChild(li);
+        }
+        function report (text) {
+            assert (true,text);
+        }
+        // 通过断言执行测试用例
+        window.onload = function () {
+            assert(true, "the test suite is running.");
+            assert(false, "Fail");
+        };
+        // window.onload = function () {
+        //     var text = 'test test';
+        //     function useless (ninjaCallBack) {
+        //         return ninjaCallBack();
+        //     }
+        //     function getText() {
+        //         report("in getText function");
+        //         return text;
+        //     }
+        //     report("before making all the calls");
+        //     assert(useless(getText) === text,
+        //         "the useless function is working" + text);
+        //     report("after the calls have been made");
+        // }
+    </script>
+    <style>
+        #results li.pass {color: green;}
+        #results li.fail {color: red;}
+    </style>
+    <!--  定义输出结果样式  -->
+</head>
+<body>
+<ul id="results"></ul>
+</body>
+</html>
